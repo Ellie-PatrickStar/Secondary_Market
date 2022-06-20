@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/aboutBg"
+    >
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_above="@+id/tv_goal"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="-5dp"
+        android:background="#00ffffff"
+
+        android:text="<back"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_about_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="关于此系统"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_about_app"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="开发目的:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_goal_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_goal"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="15dp"
+        android:text="该小型app致力于在校园范围内搭建一个二手商品交易的平台,主要包含四类物品的交易,安全性较高,支持面对面交易,极大的便利了学生们的生活。"
+
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_developer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_goal_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:text="开发人员:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_developer_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_developer"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:text="曹小蝶，黄列栋，蒋宇备"
+        android:textSize="20sp" />
+
+
+    <TextView
+        android:id="@+id/tv_college"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_developer_nickname"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:text="(桂林电子科技大学计算机科学与技术专业)"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="系统版本:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tv_college"
+        android:textColor="@color/black"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_version"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:text="Android app v1.0.0"
+        android:textSize="20sp" />
+
+
+
+</RelativeLayout>
