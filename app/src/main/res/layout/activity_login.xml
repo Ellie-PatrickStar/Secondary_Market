@@ -88,5 +88,6 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/btn_green"
         android:text="登录"
+        android:textColor="@color/white"
         android:textSize="25sp" />
 </RelativeLayout>

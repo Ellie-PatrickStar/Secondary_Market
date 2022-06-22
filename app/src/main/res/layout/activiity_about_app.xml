@@ -106,7 +106,4 @@
         android:layout_marginTop="10dp"
         android:text="Android app v1.0.0"
         android:textSize="20sp" />
-
-
-
 </RelativeLayout>
