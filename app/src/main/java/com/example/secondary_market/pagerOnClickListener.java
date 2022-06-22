@@ -10,7 +10,6 @@ public class pagerOnClickListener implements View.OnClickListener{
     public pagerOnClickListener(Context mContext){
         this.mContext=mContext;
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

@@ -14,13 +14,14 @@
 
     <TextView
         android:id="@+id/tv_add_photo"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@+id/et_price"
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        android:text="添加照片"
-        android:textSize="22sp" />
+        android:text="添加照片:"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
     <ImageButton
         android:id="@+id/iv_photo"
@@ -34,20 +35,21 @@
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@+id/tv_publish_info"
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        android:text="标题"
+        android:text="宝贝名称："
+        android:textStyle="bold"
         android:textSize="22sp" />
 
     <EditText
         android:id="@+id/et_title"
-        android:layout_width="260dp"
-        android:layout_height="40dp"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tv_publish_info"
-        android:layout_marginStart="105dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="20dp"
         android:hint="请输入标题"
         android:maxLines="1"
@@ -57,20 +59,21 @@
 
     <TextView
         android:id="@+id/tv_description"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/et_title"
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        android:text="描述"
-        android:textSize="22sp" />
+        android:text="宝贝描述:"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/et_description"
-        android:layout_width="260dp"
-        android:layout_height="40dp"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/et_title"
-        android:layout_marginStart="105dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="20dp"
         android:hint="入手渠道，几成新，是否磨损等"
         android:maxLines="2"
@@ -79,20 +82,21 @@
 
     <TextView
         android:id="@+id/tv_price"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@+id/et_description"
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
-        android:text="定价"
-        android:textSize="22sp" />
+        android:text="宝贝定价:"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/et_price"
-        android:layout_width="260dp"
-        android:layout_height="40dp"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/et_description"
-        android:layout_marginStart="105dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="20dp"
         android:hint="请输入定价"
         android:maxLines="1"

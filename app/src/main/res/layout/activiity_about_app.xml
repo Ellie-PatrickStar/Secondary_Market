@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/aboutBg"
+    android:background="@drawable/aboutbg"
     >
 
     <Button
@@ -50,7 +50,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="15dp"
-        android:text="该小型app致力于在校园范围内搭建一个二手商品交易的平台,主要包含四类物品的交易,安全性较高,支持面对面交易,极大的便利了学生们的生活。"
+        android:text="本App致力于在校园范围内搭建一个二手商品交易的平台,主要包含四类物品的交易,安全性较高,支持面对面交易,极大的便利了学生们的生活。"
 
         android:textSize="20sp" />
 

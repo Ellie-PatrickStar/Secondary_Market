@@ -20,9 +20,9 @@
                     android:id="@+id/edittext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:background="@drawable/edge"
                     android:hint="请输入搜索内容"
                     android:maxLength="10"
@@ -243,6 +243,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/greyE5E5E5"
         android:layout_gravity="bottom"
         android:gravity="center"
         android:orientation="horizontal">
@@ -253,6 +254,7 @@
             android:layout_height="wrap_content"
             android:gravity="clip_vertical"
             android:orientation="vertical">
+
             <ImageButton
                 android:id="@+id/ib_home_page"
                 android:layout_width="40dp"
