@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <TextView
         android:id="@+id/tv_refresh"
         android:layout_width="wrap_content"
@@ -44,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="330dp"
             android:layout_marginTop="18dp"
-            android:text="< 返回"
+            android:text="返回"
             android:textColor="@color/grey9F9F9F"
             android:textSize="24sp" />
     </ListView>

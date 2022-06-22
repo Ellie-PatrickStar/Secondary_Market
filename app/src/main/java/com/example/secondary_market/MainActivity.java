@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         initLoopView();  //实现轮播图
     }
-
+    //轮播图
     private void initLoopView() {
         viewPager = (ViewPager)findViewById(R.id.loopviewpager);
         ll_dots_container = (LinearLayout)findViewById(R.id.ll_dots_loop);
@@ -43,16 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.test4,
                 R.drawable.test5
         };
-
         // 文本描述
         mDec = new String[]{
-                "Test1",
-                "Test2",
-                "Test3",
-                "Test4",
-                "Test5"
+                "节日快乐！",
+                "Sharing Economy",
+                "二手交易",
+                "资源循环",
+                "东西不算好，环保更重要"
         };
-
         mImg_id = new int[]{
                 R.id.pager_img1,
                 R.id.pager_img2,
@@ -60,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 R.id.pager_img4,
                 R.id.pager_img5
         };
-
         // 初始化要展示的5个ImageView
         mImgList = new ArrayList<ImageView>();
         ImageView imageView;
@@ -71,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             imageView = new ImageView(this);
             imageView.setBackgroundResource(mImg[i]);
             imageView.setId(mImg_id[i]);
-            imageView.setOnClickListener(new pagerOnClickListener(getApplicationContext()));
             mImgList.add(imageView);
             //加引导点
             dotView = new View(this);
@@ -99,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
             }
-
             @Override
             public void onPageSelected(int i) {
                 int newPosition = i % mImgList.size();
@@ -108,12 +103,10 @@ public class MainActivity extends AppCompatActivity {
                 ll_dots_container.getChildAt(newPosition).setEnabled(true);
                 previousSelectedPosition = newPosition;
             }
-
             @Override
             public void onPageScrollStateChanged(int i) {
             }
         });
-
         // 开启轮询
         new Thread(){
             public void run(){
@@ -136,4 +129,6 @@ public class MainActivity extends AppCompatActivity {
         }.start();
 
     }
+
+
 }

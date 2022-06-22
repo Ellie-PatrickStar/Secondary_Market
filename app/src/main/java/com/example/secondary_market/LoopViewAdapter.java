@@ -38,7 +38,7 @@ class LoopViewAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return Integer.MAX_VALUE;   //返回一个无限大的值，可以 无限循环!!!!!
+        return Integer.MAX_VALUE;   //返回一个无限大的值，实现无限循环
     }
 
     /**
@@ -46,6 +46,7 @@ class LoopViewAdapter extends PagerAdapter {
      */
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object o) {
+
         return view == o ;
     }
 }
