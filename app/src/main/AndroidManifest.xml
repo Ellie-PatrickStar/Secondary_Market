@@ -9,6 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Secondary_Market">
+
+        <activity android:name=".MyCollectionActivity"></activity>
+        <activity android:name=".AboutAppActivity" />
+        <activity android:name=".CommodityTypeActivity" />
+        <activity android:name=".ReviewCommodityActivity" />
+        <activity android:name=".MyCommodityActivity" />
+        <activity android:name=".ModifyInfoActivity" />
+        <activity android:name=".MyInfoActivity" />
+        <activity android:name=".ModifyPwdActivity" />
+        <activity android:name=".PersonalCenterActivity" />
+        <activity android:name=".AddCommodityActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -18,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
     </application>
 
