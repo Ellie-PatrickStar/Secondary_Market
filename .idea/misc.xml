@@ -12,6 +12,8 @@
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/drawable/dot.xml" value="0.1" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/drawable/edge.xml" value="0.1825" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/drawable/ic_back.xml" value="0.1665" />
+        <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/drawable/ic_baseline_visibility_24.xml" value="0.134" />
+        <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.134" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/drawable/ic_lock.xml" value="0.125" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/drawable/ic_user.xml" value="0.1825" />
@@ -19,7 +21,7 @@
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/drawable/text_underline.xml" value="0.14" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/activiity_about_app.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/activity_add_commodity.xml" value="0.2" />
-        <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/activity_commodity_type.xml" value="1.0" />
+        <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/activity_commodity_type.xml" value="0.22613531047265986" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/activity_login.xml" value="0.196875" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/activity_main.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/activity_modify_info.xml" value="0.20104166666666667" />
@@ -32,7 +34,7 @@
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/activity_review_commodity.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/activity_want_commodity.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/item_bean_list.xml" value="0.22083333333333333" />
-        <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/layout_all_commodity.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/layout_all_commodity.xml" value="0.25" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/layout_commodity_review.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/layout_my_collection.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/nefelibata/AndroidStudioProjects/Secondary_Market/app/src/main/res/layout/layout_my_commodity.xml" value="0.20104166666666667" />
