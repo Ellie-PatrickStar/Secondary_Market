@@ -4,14 +4,14 @@ public class Bean {
 
     private int iconId;
     private String title;
-    private String content;
-    private String comments;
+    private float price;
+    private String phone;
 
-    public Bean(int iconId, String title, String content, String comments) {
+    public Bean(int iconId, String title,float price, String phone) {
         this.iconId = iconId;
         this.title = title;
-        this.content = content;
-        this.comments = comments;
+        this.price = price;
+        this.phone = phone;
     }
 
     public int getIconId() {
@@ -30,19 +30,19 @@ public class Bean {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public float getPrice() {
+        return price;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setPrice(float price) {
+        this.price = price;
     }
 
-    public String getComments() {
-        return comments;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setComments(String comments) {
-        this.comments = comments;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

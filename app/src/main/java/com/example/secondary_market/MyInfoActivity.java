@@ -38,6 +38,7 @@ public class MyInfoActivity extends AppCompatActivity {
         tvStuPhone = findViewById(R.id.et_phone);
         tvStuQq = findViewById(R.id.et_stu_qq);
         tvStuAddress = findViewById(R.id.et_stu_address);
+
         StudentDbHelper dbHelper = new StudentDbHelper(getApplicationContext(),StudentDbHelper.DB_NAME,null,1);
         LinkedList<Student> students = dbHelper.readStudents(tvUserNumber.getText().toString());
         if(students != null) {

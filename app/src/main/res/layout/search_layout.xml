@@ -44,7 +44,6 @@
 
         <Button
             android:id="@+id/search_btn_back"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center_vertical"
@@ -60,7 +59,6 @@
     <ListView
         android:visibility="gone"
         android:id="@+id/search_lv_tips"
-        android:background="@drawable/lv_search_tips_bg"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"

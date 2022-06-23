@@ -1,7 +1,6 @@
 package com.example.secondary_market;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -44,11 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
         initLoopView();  //实现轮播图
         //搜索
-        View search = findViewById(R.id.search);
+        View search = findViewById(R.id.search_et_input);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SearchView.class));
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
 
             }
 
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView tvStuNumber = findViewById(R.id.tv_student_number);
         String str = "";
         if (bundle != null) {
-            str = "欢迎" + bundle.getString("username") + ",你好!";
+            str = "亲爱的" + bundle.getString("username") + ",欢迎登录!";
         }
         tvStuNumber.setText(str);
         //当前登录的学生账号
@@ -132,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         ibDaily = findViewById(R.id.ib_daily_use);
         ibSports = findViewById(R.id.ib_sports_good);
         final Bundle bundle2 = new Bundle();
-        //学习用品
+        //图书文具
         ibLearning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //电子用品
+        //电脑数码
         ibElectronic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //生活用品
+        //日用百货
         ibDaily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //体育用品
+        //运动户外
         ibSports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

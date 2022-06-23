@@ -19,32 +19,25 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class SearchView extends LinearLayout implements View.OnClickListener {
-    // 输入框
-    private EditText etInput;
-    // 删除键
-    private ImageView ivDelete;
-    //返回按钮
-    private Button btnBack;
-    //上下文对象
-    private Context mContext;
-    //弹出列表
-    private ListView lvTips;
-    //提示adapter （推荐adapter）
-    private ArrayAdapter<String> mHintAdapter;
-    //自动补全adapter 只显示名字
-    private ArrayAdapter<String> mAutoCompleteAdapter;
-    //搜索回调接口
-    private SearchViewListener mListener;
+public class SearchActivity extends LinearLayout implements View.OnClickListener {
+    private EditText etInput;// 输入框
+    private ImageView ivDelete;// 删除键
+    private Button btnBack;//返回按钮
+    private Context mContext;//上下文对象
+    private ListView lvTips;//弹出列表
+    private ArrayAdapter<String> mHintAdapter;//提示adapter （推荐adapter）
+    private ArrayAdapter<String> mAutoCompleteAdapter;//自动补全adapter 只显示名字
+    private SearchViewListener mListener;//搜索回调接口
     /**
      * 设置搜索回调接口
      * @param listener 监听者
      */
+
     public void setSearchViewListener(SearchViewListener listener) {
         mListener = listener;
     }
 
-    public SearchView(Context context, AttributeSet attrs) {
+    public SearchActivity(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         LayoutInflater.from(context).inflate(R.layout.search_layout, this);
