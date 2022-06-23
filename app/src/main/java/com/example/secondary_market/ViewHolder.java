@@ -9,10 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by yetwish on 2015-05-11
- */
-
 public class ViewHolder {
 
     private SparseArray<View> mViews;
