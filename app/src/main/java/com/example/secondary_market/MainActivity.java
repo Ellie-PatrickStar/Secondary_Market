@@ -2,11 +2,11 @@ package com.example.secondary_market;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -43,14 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
         initLoopView();  //实现轮播图
         //搜索
-        View search = findViewById(R.id.search_et_input);
+        Button search = findViewById(R.id.search_et_input);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SearchActivity.class));
-
             }
-
         });
 
         lvAllCommodity = findViewById(R.id.lv_all_commodity);
@@ -64,11 +62,12 @@ public class MainActivity extends AppCompatActivity {
         final TextView tvStuNumber = findViewById(R.id.tv_student_number);
         String str = "";
         if (bundle != null) {
-            str = "亲爱的" + bundle.getString("username") + ",欢迎登录!";
+            str = "欢迎" + bundle.getString("username") + ",你好!";
         }
         tvStuNumber.setText(str);
         //当前登录的学生账号
-        final String stuNum = tvStuNumber.getText().toString().substring(2, tvStuNumber.getText().length() - 4);
+
+        final String stuNum = tvStuNumber.getText().toString().substring(3, tvStuNumber.getText().length() - 6);
         ImageButton IbAddProduct = findViewById(R.id.ib_add_product);
         //跳转到添加物品界面
         IbAddProduct.setOnClickListener(new View.OnClickListener() {
@@ -107,23 +106,20 @@ public class MainActivity extends AppCompatActivity {
                 lvAllCommodity.setAdapter(adapter);
             }
         });
-        //为每一个item设置点击事件
-        lvAllCommodity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Commodity commodity = (Commodity) lvAllCommodity.getAdapter().getItem(position);
-                Bundle bundle1 = new Bundle();
-                bundle1.putInt("position",position);
-                bundle1.putByteArray("picture",commodity.getPicture());
-                bundle1.putString("title",commodity.getTitle());
-                bundle1.putString("description",commodity.getDescription());
-                bundle1.putFloat("price",commodity.getPrice());
-                bundle1.putString("phone",commodity.getPhone());
-                bundle1.putString("stuId",stuNum);
-                Intent intent = new Intent(MainActivity.this, ReviewCommodityActivity.class);
-                intent.putExtras(bundle1);
-                startActivity(intent);
-            }
+        //为每一个item设置点击事件,进入详情页
+        lvAllCommodity.setOnItemClickListener((parent, view, position, id) -> {
+            Commodity commodity = (Commodity) lvAllCommodity.getAdapter().getItem(position);
+            Bundle bundle1 = new Bundle();
+            bundle1.putInt("position",position);
+            bundle1.putByteArray("picture",commodity.getPicture());
+            bundle1.putString("title",commodity.getTitle());
+            bundle1.putString("description",commodity.getDescription());
+            bundle1.putFloat("price",commodity.getPrice());
+            bundle1.putString("phone",commodity.getPhone());
+            bundle1.putString("stuId",stuNum);
+            Intent intent = new Intent(MainActivity.this, ReviewCommodityActivity.class);
+            intent.putExtras(bundle1);
+            startActivity(intent);
         });
         //点击不同的类别,显示不同的商品信息
         ibLearning = findViewById(R.id.ib_learning_use);

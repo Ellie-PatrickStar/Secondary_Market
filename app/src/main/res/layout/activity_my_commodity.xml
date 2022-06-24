@@ -24,21 +24,21 @@
         android:textSize="18sp"
         android:textStyle="bold" />
     <TextView
-        android:id="@+id/tv_refresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="刷新"
-        android:textSize="22sp"
-        android:textColor="@color/black"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"/>
-    <TextView
         android:id="@+id/tv_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="返回"
         android:textSize="22sp"
-        android:textColor="@color/black"
+        android:textColor="@color/teal_700"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/tv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="刷新"
+        android:textColor="@color/teal_700"
+        android:textSize="22sp"
         android:layout_marginStart="330dp"
         android:layout_marginTop="15dp"/>
 
@@ -47,7 +47,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tv_stuId"
-        android:layout_margin="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"

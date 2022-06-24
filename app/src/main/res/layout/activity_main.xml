@@ -3,6 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recyclerview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@+id/search"-->
+<!--        android:layout_alignBottom="@+id/lv_all_commodity" />-->
+
         <LinearLayout
             android:id="@+id/search"
             android:layout_width="match_parent"
@@ -10,20 +17,19 @@
             android:background="@color/greyE5E5E5"
             android:gravity="center"
             android:orientation="horizontal">
-
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <EditText
+                <Button
                     android:id="@+id/search_et_input"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
                     android:background="@drawable/edge"
                     android:drawableLeft="@drawable/search_icon"
                     android:drawablePadding="10dp"
@@ -31,9 +37,9 @@
                     android:imeOptions="actionSearch"
                     android:inputType="text"
                     android:paddingLeft="10dp"
+                    android:textAlignment="center"
                     android:textSize="18sp" />
             </RelativeLayout>
-
         </LinearLayout>
 
     <TextView
@@ -47,7 +53,6 @@
         android:textColor="@color/teal_700"
         android:textSize="18sp"
         android:textStyle="italic" />
-
     <TextView
         android:id="@+id/tv_refresh"
         android:layout_width="wrap_content"
@@ -57,27 +62,21 @@
         android:text="刷新"
         android:textColor="@color/teal_700"
         android:textSize="18sp" />
-
     <FrameLayout
         android:id="@+id/loop"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/tv_student_number"
         android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="5dp"
-
         android:orientation="vertical">
-
         <!--存放图片的ViewPager-->
-
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/loopviewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
         </androidx.viewpager.widget.ViewPager>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="25dp"
@@ -96,7 +95,6 @@
                 android:id="@+id/loop_dec"/>
             <!-- 小圆点-->
             <LinearLayout
-
                 android:id="@+id/ll_dots_loop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -247,7 +245,6 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:scrollbars="none" />
-
 
     <LinearLayout
         android:id="@+id/nav"

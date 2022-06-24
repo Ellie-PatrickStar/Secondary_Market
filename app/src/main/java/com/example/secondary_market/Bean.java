@@ -3,15 +3,25 @@ package com.example.secondary_market;
 public class Bean {
 
     private int iconId;
+    //商品图片,以二进制字节存储
+    private byte[] picture;
     private String title;
     private float price;
     private String phone;
 
     public Bean(int iconId, String title,float price, String phone) {
         this.iconId = iconId;
+        this.picture= picture;
         this.title = title;
         this.price = price;
         this.phone = phone;
+    }
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
     }
 
     public int getIconId() {

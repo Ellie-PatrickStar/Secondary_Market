@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.LinkedList;
 import java.util.List;
-
 /**
  * 不同类型商品信息的活动类
  */

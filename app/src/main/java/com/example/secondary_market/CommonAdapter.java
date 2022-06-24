@@ -18,29 +18,24 @@ public abstract class CommonAdapter<T> extends BaseAdapter{
         mData = data;
         mLayoutId = layoutId;
     }
-
     @Override
     public int getCount() {
         return mData.size();
     }
-
     @Override
     public T getItem(int i) {
         return mData.get(i);
     }
-
     @Override
     public long getItemId(int i) {
         return i;
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = ViewHolder.getHolder(mContext,convertView,mLayoutId,parent,position);
         convert(holder,position);
         return holder.getConvertView();
     }
-
     /**
      * get holder convert
      */

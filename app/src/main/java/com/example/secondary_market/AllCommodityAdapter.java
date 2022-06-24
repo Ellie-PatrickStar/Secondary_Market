@@ -16,13 +16,10 @@ import java.util.List;
 
 /**
  * 主界面所有商品列表的适配器
- * @author autumn_leaf
  */
 public class AllCommodityAdapter extends BaseAdapter {
-
     private Context context;
     private LayoutInflater layoutInflater;
-
     private List<Commodity> commodities = new ArrayList<>();
     //对每一个item保存其位置
     HashMap<Integer,View> location = new HashMap<>();
@@ -68,7 +65,6 @@ public class AllCommodityAdapter extends BaseAdapter {
         }
         return convertView;
     }
-
     //定义静态类,包含每一个item的所有元素
     static class ViewHolder {
         ImageView ivCommodity;

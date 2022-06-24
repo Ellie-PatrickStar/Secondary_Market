@@ -1,5 +1,6 @@
 package com.example.secondary_market;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -69,17 +70,45 @@ public class CommodityDbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from tb_commodity where stuId=?",new String[]{stuId});
         if(cursor.moveToFirst()) {
             do {
-                String title = cursor.getString(cursor.getColumnIndex("title"));
-                String category = cursor.getString(cursor.getColumnIndex("category"));
-                float price = cursor.getFloat(cursor.getColumnIndex("price"));
-                String phone = cursor.getString(cursor.getColumnIndex("phone"));
-                String description = cursor.getString(cursor.getColumnIndex("description"));
-                byte[] picture = cursor.getBlob(cursor.getColumnIndex("picture"));
+                @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex("title"));
+                @SuppressLint("Range") String category = cursor.getString(cursor.getColumnIndex("category"));
+                @SuppressLint("Range") float price = cursor.getFloat(cursor.getColumnIndex("price"));
+                @SuppressLint("Range") String phone = cursor.getString(cursor.getColumnIndex("phone"));
+                @SuppressLint("Range") String description = cursor.getString(cursor.getColumnIndex("description"));
+                @SuppressLint("Range") byte[] picture = cursor.getBlob(cursor.getColumnIndex("picture"));
                 Commodity commodity = new Commodity();
                 commodity.setTitle(title);
                 commodity.setCategory(category);
                 commodity.setPrice(price);
                 commodity.setDescription(description);
+                commodity.setPhone(phone);
+                commodity.setPicture(picture);
+                myCommodities.add(commodity);
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        return myCommodities;
+    }
+    /**
+     * 通过标题查找物品信息
+     * @param title 标题
+     * @return 查找到的物品
+     */
+    public List<Commodity> readCommodities(String title) {
+        List<Commodity> myCommodities = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from tb_commodity where title=?",new String[]{title});
+        if(cursor.moveToFirst()) {
+            do {
+
+                @SuppressLint("Range") String category = cursor.getString(cursor.getColumnIndex("category"));
+                @SuppressLint("Range") float price = cursor.getFloat(cursor.getColumnIndex("price"));
+                @SuppressLint("Range") String phone = cursor.getString(cursor.getColumnIndex("phone"));
+                @SuppressLint("Range") byte[] picture = cursor.getBlob(cursor.getColumnIndex("picture"));
+                Commodity commodity = new Commodity();
+                commodity.setTitle(title);
+                commodity.setCategory(category);
+                commodity.setPrice(price);
                 commodity.setPhone(phone);
                 commodity.setPicture(picture);
                 myCommodities.add(commodity);
@@ -99,13 +128,13 @@ public class CommodityDbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from tb_commodity order by price",null);
         if(cursor.moveToFirst()) {
             do {
-                String title = cursor.getString(cursor.getColumnIndex("title"));
-                String category = cursor.getString(cursor.getColumnIndex("category"));
-                float price = cursor.getFloat(cursor.getColumnIndex("price"));
-                String phone = cursor.getString(cursor.getColumnIndex("phone"));
-                String description = cursor.getString(cursor.getColumnIndex("description"));
-                byte[] picture = cursor.getBlob(cursor.getColumnIndex("picture"));
-                String stuId = cursor.getString(cursor.getColumnIndex("stuId"));
+                @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex("title"));
+                @SuppressLint("Range") String category = cursor.getString(cursor.getColumnIndex("category"));
+                @SuppressLint("Range") float price = cursor.getFloat(cursor.getColumnIndex("price"));
+                @SuppressLint("Range") String phone = cursor.getString(cursor.getColumnIndex("phone"));
+                @SuppressLint("Range") String description = cursor.getString(cursor.getColumnIndex("description"));
+                @SuppressLint("Range") byte[] picture = cursor.getBlob(cursor.getColumnIndex("picture"));
+                @SuppressLint("Range") String stuId = cursor.getString(cursor.getColumnIndex("stuId"));
                 Commodity commodity = new Commodity();
                 commodity.setTitle(title);
                 commodity.setCategory(category);
@@ -146,10 +175,10 @@ public class CommodityDbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from tb_commodity where category=?",new String[]{category});
         if(cursor.moveToFirst()) {
             do{
-                String title = cursor.getString(cursor.getColumnIndex("title"));
-                float price = cursor.getFloat(cursor.getColumnIndex("price"));
-                String description = cursor.getString(cursor.getColumnIndex("description"));
-                byte[] picture = cursor.getBlob(cursor.getColumnIndex("picture"));
+                @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex("title"));
+                @SuppressLint("Range") float price = cursor.getFloat(cursor.getColumnIndex("price"));
+                @SuppressLint("Range") String description = cursor.getString(cursor.getColumnIndex("description"));
+                @SuppressLint("Range") byte[] picture = cursor.getBlob(cursor.getColumnIndex("picture"));
                 Commodity commodity = new Commodity();
                 commodity.setTitle(title);
                 commodity.setPrice(price);

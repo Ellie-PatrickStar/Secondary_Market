@@ -23,8 +23,11 @@ public class PersonalCenterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_personal_center);
         //取出登录时的登录名
         TvStuNumber = findViewById(R.id.tv_student_number);
-        String StuNumber = this.getIntent().getStringExtra("username1");
-        TvStuNumber.setText(StuNumber);
+        Bundle bundle = getIntent().getExtras();
+        String stu_number = bundle.getString("username1");
+        TvStuNumber.setText(stu_number);
+        //String StuNumber = this.getIntent().getStringExtra("username1");
+        //TvStuNumber.setText(StuNumber);
         //返回主界面
         Button btnBack = findViewById(R.id.btn_back);
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -34,11 +37,11 @@ public class PersonalCenterActivity extends AppCompatActivity {
             }
         });
         //点击修改密码按钮
-        final Button btnModifyPwd = findViewById(R.id.btn_modify_password);
+        Button btnModifyPwd = findViewById(R.id.btn_modify_password);
         btnModifyPwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ModifyPwdActivity.class);
+                Intent intent = new Intent(PersonalCenterActivity.this,ModifyPwdActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("stu_number",TvStuNumber.getText().toString());
                 intent.putExtras(bundle);
@@ -74,9 +77,9 @@ public class PersonalCenterActivity extends AppCompatActivity {
         btnUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MyInfoActivity.class);
+                Intent intent = new Intent(PersonalCenterActivity.this,MyInfoActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("stu_number1",TvStuNumber.getText().toString());
+                bundle.putString("stu_number3",TvStuNumber.getText().toString());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

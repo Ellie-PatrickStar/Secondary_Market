@@ -3,24 +3,82 @@ package com.example.secondary_market;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class SearchAdapter extends CommonAdapter<Bean>{
+    public class SearchAdapter extends BaseAdapter {
+        private Context context;
+        private LayoutInflater layoutInflater;
+        private List<Commodity> commodities = new ArrayList<>();
+        //对每一个item保存其位置
+        HashMap<Integer,View> location = new HashMap<>();
 
-    public SearchAdapter(Context context, List<Bean> data, int layoutId) {
-        super(context, data, layoutId);
+        public SearchAdapter(Context context) {
+            this.context = context;
+            layoutInflater = LayoutInflater.from(context);
+        }
+        public void setData(List<Commodity> commodities) {
+            this.commodities = commodities;
+            notifyDataSetChanged();
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            AllCommodityAdapter.ViewHolder holder = null;
+            if(location.get(position) == null){
+                convertView = layoutInflater.inflate(R.layout.item_bean_list,null);
+                Commodity commodity = (Commodity) getItem(position);
+                holder = new AllCommodityAdapter.ViewHolder(convertView,commodity);
+                //保存view的位置position
+                location.put(position,convertView);
+                convertView.setTag(holder);
+            }else{
+                convertView = location.get(position);
+                holder = (AllCommodityAdapter.ViewHolder) convertView.getTag();
+            }
+            return convertView;
+        }
+        //定义静态类,包含每一个item的所有元素
+        static class ViewHolder {
+            ImageView ivCommodity;
+            TextView tvTitle,tvType,tvPrice;
+
+            public ViewHolder(View itemView,Commodity commodity) {
+                tvTitle = itemView.findViewById(R.id.tv_name);
+                tvType = itemView.findViewById(R.id.tv_type);
+                tvPrice = itemView.findViewById(R.id.tv_price);
+                ivCommodity = itemView.findViewById(R.id.iv_commodity);
+                tvTitle.setText(commodity.getTitle());
+                tvPrice.setText(String.valueOf(commodity.getPrice())+"元");
+                tvType.setText(commodity.getCategory());
+                byte[] picture = commodity.getPicture();
+                //从字节数组中解码生成不可变的位图
+                //public static Bitmap decodeByteArray(byte[] data, int offset, int length)
+                Bitmap img = BitmapFactory.decodeByteArray(picture,0,picture.length);
+                ivCommodity.setImageBitmap(img);
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 0;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
     }
-    @Override
-    public void convert(ViewHolder holder, int position) {
-        holder.setImageResource(R.id.item_search_iv_icon,mData.get(position).getIconId())
-                .setText(R.id.item_search_tv_title,mData.get(position).getTitle())
-                .setText(R.id.search_tv_price,mData.get(position).getPrice()+"元")
-                .setText(R.id.search_tv_phone,mData.get(position).getPhone());
-    }
-
-
-}

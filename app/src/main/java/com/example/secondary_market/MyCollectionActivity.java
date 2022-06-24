@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * 我的收藏Activity类
  * @author autumn_leaf

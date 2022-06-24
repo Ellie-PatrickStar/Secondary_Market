@@ -32,7 +32,10 @@ public class ModifyInfoActivity extends AppCompatActivity {
         });
         //利用bundle传递学号
         final TextView tvStuNumber = findViewById(R.id.tv_stu_number);
-        tvStuNumber.setText(this.getIntent().getStringExtra("stu_number2"));
+        Bundle bundle = getIntent().getExtras();
+        String stu_number = bundle.getString("stu_number2");
+        tvStuNumber.setText(stu_number);
+        //tvStuNumber.setText(this.getIntent().getStringExtra("stu_number2"));
         etStuName = findViewById(R.id.et_stu_name);
         etMajor = findViewById(R.id.et_stu_major);
         etPhone = findViewById(R.id.et_stu_phone);

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/greyE5E5E5">
+
 
     <ImageView
-        android:id="@+id/item_search_iv_icon"
+        android:id="@+id/ivCommodity"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="20dp"
@@ -12,19 +14,19 @@
         android:src="@drawable/img_goods" />
 
     <TextView
-        android:id="@+id/item_search_tv_title"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/item_search_iv_icon"
+        android:layout_toRightOf="@id/ivCommodity"
         android:text="收纳工具"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/search_tv_price"
+        android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="330dp"
@@ -36,15 +38,15 @@
 
 
     <TextView
-        android:id="@+id/search_tv_phone"
+        android:id="@+id/tvType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/item_search_tv_title"
+        android:layout_below="@id/tvTitle"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="6dp"
-        android:layout_toRightOf="@id/item_search_iv_icon"
-        android:text="18761805278"
-        android:textColor="@color/grey817D7D"
+        android:layout_toRightOf="@id/ivCommodity"
+        android:text="日用百货"
+        android:textColor="@color/teal_500"
         android:textSize="18sp"
         android:textStyle="bold" />
 

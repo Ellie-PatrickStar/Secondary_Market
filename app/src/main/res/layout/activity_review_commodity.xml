@@ -167,7 +167,8 @@
                 android:id="@+id/et_comment"
                 android:layout_width="300dp"
                 android:layout_height="30dp"
-                android:text="    留下一条善意的评论……"
+                android:paddingLeft="20dp"
+                android:text="留下一条善意的评论……"
                 android:background="@drawable/edge"
                 android:textColor="@color/grey9F9F9F"
                 android:textSize="20sp" />

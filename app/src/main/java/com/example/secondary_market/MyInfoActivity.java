@@ -32,10 +32,13 @@ public class MyInfoActivity extends AppCompatActivity {
         });
         //从bundle中获取用户账号/学号
         final TextView tvUserNumber = findViewById(R.id.tv_stu_number);
-        tvUserNumber.setText(this.getIntent().getStringExtra("stu_number1"));
-        tvStuName = findViewById(R.id.et_username);
+        Bundle bundle = getIntent().getExtras();
+        String stu_number = bundle.getString("stu_number3");
+        tvUserNumber.setText(stu_number);
+        //tvUserNumber.setText(this.getIntent().getStringExtra("stu_number1"));
+        tvStuName = findViewById(R.id.et_stu_name);
         tvStuMajor = findViewById(R.id.et_stu_major);
-        tvStuPhone = findViewById(R.id.et_phone);
+        tvStuPhone = findViewById(R.id.et_stu_phone);
         tvStuQq = findViewById(R.id.et_stu_qq);
         tvStuAddress = findViewById(R.id.et_stu_address);
 
@@ -61,7 +64,7 @@ public class MyInfoActivity extends AppCompatActivity {
         btnModifyInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ModifyInfoActivity.class);
+                Intent intent = new Intent(MyInfoActivity.this,ModifyInfoActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("stu_number2",tvUserNumber.getText().toString());
                 intent.putExtras(bundle);

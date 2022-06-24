@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -14,12 +15,20 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.secondary_market.Collection;
+import com.example.secondary_market.MyCollectionDbHelper;
+import com.example.secondary_market.R;
+import com.example.secondary_market.Review;
+import com.example.secondary_market.ReviewAdapter;
+import com.example.secondary_market.ReviewDbHelper;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 
 /**
  * 商品信息评论/留言类
+ * @author autumn_leaf
  */
 public class ReviewCommodityActivity extends AppCompatActivity {
 
@@ -35,6 +44,7 @@ public class ReviewCommodityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_commodity);
+
         ivCommodity = findViewById(R.id.iv_commodity);
         title = findViewById(R.id.tv_title);
         description = findViewById(R.id.tv_description);
@@ -53,37 +63,30 @@ public class ReviewCommodityActivity extends AppCompatActivity {
         }
         //返回
         TextView tvBack = findViewById(R.id.tv_back);
-        tvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        tvBack.setOnClickListener(v -> finish());
+
         //点击收藏按钮
         ImageButton ibMyLove = findViewById(R.id.ib_my_love);
-        ibMyLove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MyCollectionDbHelper dbHelper = new MyCollectionDbHelper(getApplicationContext(),MyCollectionDbHelper.DB_NAME,null,1);
-                Collection collection = new Collection();
-                collection.setTitle(title.getText().toString());
-                String price1 = price.getText().toString().substring(0,price.getText().toString().length()-1);
-                collection.setPrice(Float.parseFloat(price1));
-                collection.setPhone(phone.getText().toString());
-                collection.setDescription(description.getText().toString());
-                collection.setPicture(picture);
-                String stuId = getIntent().getStringExtra("stuId");
-                collection.setStuId(stuId);
-                dbHelper.addMyCollection(collection);
-                Toast.makeText(getApplicationContext(),"已添加至我的收藏!",Toast.LENGTH_SHORT).show();
-            }
+        ibMyLove.setOnClickListener(v -> {
+            MyCollectionDbHelper dbHelper = new MyCollectionDbHelper(getApplicationContext(),MyCollectionDbHelper.DB_NAME,null,1);
+            Collection collection = new Collection();
+            collection.setTitle(title.getText().toString());
+            String price1 = price.getText().toString().substring(0,price.getText().toString().length()-1);
+            collection.setPrice(Float.parseFloat(price1));
+            collection.setPhone(phone.getText().toString());
+            collection.setDescription(description.getText().toString());
+            collection.setPicture(picture);
+            String stuId = getIntent().getStringExtra("stuId");
+            collection.setStuId(stuId);
+            dbHelper.addMyCollection(collection);
+            Toast.makeText(getApplicationContext(),"已添加至我的收藏!",Toast.LENGTH_SHORT).show();
         });
 
         etComment = findViewById(R.id.et_comment);
         lvReview = findViewById(R.id.list_comment);
         //提交评论点击事件
         Button btnReview = findViewById(R.id.btn_submit);
-        btnReview.setOnClickListener(new View.OnClickListener() {
+        btnReview.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 //先检查是否为空
@@ -113,7 +116,7 @@ public class ReviewCommodityActivity extends AppCompatActivity {
         lvReview.setAdapter(adapter);
         //刷新页面
         TextView tvRefresh = findViewById(R.id.tv_refresh);
-        tvRefresh.setOnClickListener(new View.OnClickListener() {
+        tvRefresh.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 reviews = dbHelper.readReviews(position);

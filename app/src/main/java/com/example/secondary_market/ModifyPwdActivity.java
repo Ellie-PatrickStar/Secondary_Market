@@ -31,8 +31,11 @@ public class ModifyPwdActivity extends AppCompatActivity {
                 finish();
             }
         });
-        tvStuNumber = findViewById(R.id.tv_stu_number);
-        tvStuNumber.setText(this.getIntent().getStringExtra("stu_number"));
+        tvStuNumber = findViewById(R.id.et_original_count);
+        Bundle bundle = getIntent().getExtras();
+        String stu_number = bundle.getString("stu_number");
+        tvStuNumber.setText(stu_number);
+//        tvStuNumber.setText(this.getIntent().getStringExtra("stu_number"));
         etOriginPwd = findViewById(R.id.et_original_pwd);
         etNewPwd = findViewById(R.id.et_new_pwd);
         etConfirmPwd = findViewById(R.id.et_confirm_new_pwd);
