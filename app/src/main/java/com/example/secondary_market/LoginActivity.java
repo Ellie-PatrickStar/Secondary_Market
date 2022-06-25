@@ -17,6 +17,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.LinkedList;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -27,6 +31,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private CheckBox cbRememberPwd;
     private String username;
     LinkedList<User> users = new LinkedList<>();
+    private String sql_username;
+    private String sql_userpassword;
 
 
     @Override
@@ -171,18 +177,48 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (CheckInput()) {
             UserDbHelper dbHelper = new UserDbHelper(getApplicationContext(), UserDbHelper.DB_NAME, null, 1);
             users = dbHelper.readUsers();
-            for (User user : users) {
-                //如果可以找到,则输出登录成功,并跳转到主界面
-                if (user.getUsername().equals(EtStuNumber.getText().toString()) && user.getPassword().equals(EtStuPwd.getText().toString())) {
-                    flag = true;
-                    Toast.makeText(LoginActivity.this, "登录成功!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    Bundle bundle = new Bundle();
-                    username = EtStuNumber.getText().toString();
-                    bundle.putString("username", username);
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    JDBC jdbc=new JDBC();
+                    Connection conn=jdbc.oKHttpjdbc();
+                    String stu_name=EtStuNumber.getText().toString();
+                    String sql="select user_name,user_password from user where user_name=?";
+                    try {
+                        PreparedStatement ps=conn.prepareStatement(sql);
+                        ps.setString(1,stu_name);
+                        ResultSet rs=ps.executeQuery();
+
+                        sql_username=rs.getString(2);
+                        while (rs.next()){
+                            System.out.println("jjjjj");
+                             sql_userpassword=rs.getString(3);
+
+
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
+            });
+
+
+            if (sql_username!=null){
+                for (User user : users) {
+                    //如果可以找到,则输出登录成功,并跳转到主界面
+                    if (user.getUsername().equals(EtStuNumber.getText().toString()) && user.getPassword().equals(EtStuPwd.getText().toString())&&sql_username.equals(EtStuNumber.getText().toString())&&sql_userpassword.equals(EtStuPwd.getText().toString())) {
+                        flag = true;
+                        Toast.makeText(LoginActivity.this, "登录成功!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Bundle bundle = new Bundle();
+                        username = EtStuNumber.getText().toString();
+                        bundle.putString("username", username);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                }
+            }else if(sql_username==null){
+                System.out.println("stuname=null");
             }
             //否则提示登录失败,需要重新输入
             if (!flag) {

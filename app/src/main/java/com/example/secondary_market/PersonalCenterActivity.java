@@ -26,8 +26,7 @@ public class PersonalCenterActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String stu_number = bundle.getString("username1");
         TvStuNumber.setText(stu_number);
-        //String StuNumber = this.getIntent().getStringExtra("username1");
-        //TvStuNumber.setText(StuNumber);
+
         //返回主界面
         Button btnBack = findViewById(R.id.btn_back);
         btnBack.setOnClickListener(new View.OnClickListener() {

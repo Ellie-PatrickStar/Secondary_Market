@@ -6,14 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.secondary_market.R;
 
 import java.util.LinkedList;
 
-/**
- * 我的个人信息活动类
- * @author : autumn_leaf
- */
+ // 我的个人信息活动类
 public class MyInfoActivity extends AppCompatActivity {
 
     TextView tvStuName,tvStuMajor,tvStuPhone,tvStuQq,tvStuAddress;
@@ -35,13 +35,13 @@ public class MyInfoActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String stu_number = bundle.getString("stu_number3");
         tvUserNumber.setText(stu_number);
-        //tvUserNumber.setText(this.getIntent().getStringExtra("stu_number1"));
+
+//        tvUserNumber.setText(this.getIntent().getStringExtra("stu_number1"));
         tvStuName = findViewById(R.id.et_stu_name);
         tvStuMajor = findViewById(R.id.et_stu_major);
         tvStuPhone = findViewById(R.id.et_stu_phone);
         tvStuQq = findViewById(R.id.et_stu_qq);
         tvStuAddress = findViewById(R.id.et_stu_address);
-
         StudentDbHelper dbHelper = new StudentDbHelper(getApplicationContext(),StudentDbHelper.DB_NAME,null,1);
         LinkedList<Student> students = dbHelper.readStudents(tvUserNumber.getText().toString());
         if(students != null) {
@@ -64,7 +64,7 @@ public class MyInfoActivity extends AppCompatActivity {
         btnModifyInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyInfoActivity.this,ModifyInfoActivity.class);
+                Intent intent = new Intent(getApplicationContext(),ModifyInfoActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("stu_number2",tvUserNumber.getText().toString());
                 intent.putExtras(bundle);
